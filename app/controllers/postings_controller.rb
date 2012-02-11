@@ -19,6 +19,7 @@ class PostingsController < ApplicationController
 
   def update
     @posting = Posting.find(params[:id])
+    @posting.found_by = current_user
     if @posting.update_attributes(params[:posting])
       flash[:success] = "Found notification sent."
       redirect_to :root
