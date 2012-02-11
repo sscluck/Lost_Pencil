@@ -20,7 +20,7 @@ class PostingsController < ApplicationController
   def update
     @posting = Posting.find(params[:id])
 
-    if params[:found] == "true"
+    if params[:posting][:found] == "true"
       @posting.found_by = current_user
       if @posting.update_attributes(params[:posting])
         flash[:success] = "Found notification sent."
