@@ -8,16 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= image_tag("headerneat.gif", :class => "header") %>
   <div class = "content center">
-    <%= render 'layouts/header' %>
-    <% flash.each do |k, v| %>
+     <%= render 'layouts/header' %>
+     <% flash.each do |k, v| %>
        <div class = "flash">
-	 <%= v %>
-       </div>
-    <% end %>
+  	  <%= v %>
+	</div>
+      <% end %>
 
-    <%= yield %>
-    <%= debug(params) if Rails.env.development? %>   
+      <%= yield %>
   </div>
 </body>
 </html>

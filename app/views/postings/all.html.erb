@@ -1,20 +1,29 @@
-<p>
-   <% Posting.where("found = 'false'").each do |post| %>
-       <div class = "post center">
-	   <h2><%= post.title %></h2>
-	   <br />
-	   <%= post.description %>
-	   <br /><br />
-	   <b>Last known location</b>: <%= post.location%>
-	   <br/ > <br />
-	    <b>Reported missing on</b>: <%= post.date %>
-	    <% if signed_in? %>
-  	        <%= form_for(post) do |f| %>
-	            <%= f.hidden_field :found, :value => true %>
-	            <%= f.submit "Found it!" %>
-		<% end %>
+<div class = "all_posts">
+  <div class = "leaderboard elems">
+    Waah
+  </div>
+<div class = "elems"
+
+  <p>
+      <h2>Wanted:</h2>
+    <% Posting.where("found = 'false'").each do |post| %>
+    <div class = "post center">
+      <h2><%= post.title %></h2>
+      <br />
+      <%= post.description %>
+      <br /><br />
+      <b>Last known location</b>: <%= post.location%>
+      <br/ > <br />
+	<b>Reported missing on</b>: <%= post.date %>
+	<% if signed_in? %>
+  	    <%= form_for(post) do |f| %>
+	        <%= f.hidden_field :found, :value => true %>
+		<%= f.submit "Found it!" %>
 	    <% end %>
-       </div>
-       <br />
-   <% end %>
-</p
+	<% end %>
+    </div>
+    <br />
+    <% end %>
+  </p>
+</div>
+</div>
