@@ -5,7 +5,7 @@
 	  Leaderboard:
 	  <% User.order('points desc').limit(10).each do |user| %>
 	  <ol>
-	    <li><%= user.name %> <%= user.points %>pts</li>
+	    <li><%= user.name %>&nbsp &nbsp &nbsp <%= user.points %>pts</li>
 	  </ol>
 	  <% end %>
 	</div>
@@ -20,9 +20,11 @@
 		<br />
 		<%= post.description %>
 		<br /><br />
-		<b>Last known location</b>: <%= post.location%>
-		<br/ > <br />
+		<b>Last known location</b>: <%= post.location %>
+		<br /> <br />
 		  <b>Reported missing on</b>: <%= post.date %>
+		  <br /> <br />
+		  <b>Difficulty level</b>: <%= post.difficulty %>
 		  <% if signed_in? %>
 		  <br /><br />
 		  <div class = "confirmation">

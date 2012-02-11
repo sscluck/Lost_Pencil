@@ -52,9 +52,10 @@ class PostingsController < ApplicationController
       @hero.points += 2
     else
       @hero.points += 3
-         end
+    end
+    @hero.save
     @posting.destroy
-    redirect_back_or :root
+    redirect_to user_path(current_user)
   end
 
 end

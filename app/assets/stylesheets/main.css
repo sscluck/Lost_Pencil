@@ -1,6 +1,6 @@
 body{
-    font-family: "Garamond"
-    font-size: 10pt;
+    font-family: "Tahoma";
+    font-size: 12pt;
     background: #FF0000;
 }
 
@@ -11,18 +11,29 @@ body{
 
 div.leaderboard{
     width: 350px;
+     -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;   
+    border: 1px #FFCC00 solid;
+    background: #FFEEBB;
+    color: green;
+    margin-left: -50px;
+    padding: 20px;
+    margin-top: 150px;
 }
 
 div.content{
     margin-top: 75px;
     padding: 120px;
-    background:url('/assets/leaderboard.gif') no-repeat;
+    background: white;
     background-size: 100% 100%;
     width: 70%;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
+    border: 5px solid yellow;
 }
 
 a, a:active, a:visited{
@@ -32,7 +43,6 @@ a, a:active, a:visited{
 
 a:hover{
     color: blue;
-    border-top: 1px solid green;
 }
 
 div.elems{
@@ -42,14 +52,16 @@ div.elems{
 div.all_posts{
     width: 750px;
     padding: 10px;
+    margin-left: 100px;
 }
 
 div.post{
     background: #DFFCFF;
-    padding:5px;
+    padding:10px;
     width: 500px;
     margin-left: 0px;
     padding-bottom: 30px;
+    border: 1px #BDDAFF solid;
 }
 
 div.post b{
@@ -64,6 +76,19 @@ input{
 div.nav{
     display: inline;
     float: right;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;   
+    border: 1px red solid;
+    background: #FFDDDD;
+    color: green;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: -100px;
+    margin-right: -70px;    
 }
 
 div.nav a{
@@ -99,4 +124,22 @@ table.postings td{
 
 h1.wanted{
     font-size: 50pt;
+}
+
+[type = submit]{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;   
+    border: 1px green solid;
+    background: #88FF88;
+    color: green;
+}
+
+h2.found{
+    color: red;
+}
+
+.username{
+    color: blue;
 }

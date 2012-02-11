@@ -1,7 +1,8 @@
 <div class = "nav center">
      <%= link_to "Postings", root_path %>
     <% if signed_in? %> 
-        <div class = "curruser">Logged in as: <%= current_user.name %></div>
+        <div class = "curruser">Logged in as: <%= current_user.name %>
+        |</div>
         <%= link_to "Mah page", user_path(current_user) %>
         <%= link_to "Add post", postings_new_path %>
        <%= link_to "Sign out", signout_path, :method => :delete %>
