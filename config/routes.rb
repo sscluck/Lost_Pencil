@@ -1,7 +1,10 @@
 LostPencil::Application.routes.draw do
-  get "users/new"
+  resources :users
 
+  get "users/new"
   get "postings/new"
+
+  match '/signup', :to => 'users#new'
 
   root :to => 'postings#all'
 
