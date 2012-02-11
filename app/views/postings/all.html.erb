@@ -13,7 +13,7 @@
       <td>
 	<div class = "all_posts">
 	    <p>
-	      <h2>Wanted:</h2>
+	      <h1 class = "wanted">Wanted:</h1>
 	      <% Posting.where("found = 'false'").each do |post| %>
 	      <div class = "post center">
 		<h2><%= post.title %></h2>
@@ -24,11 +24,14 @@
 		<br/ > <br />
 		  <b>Reported missing on</b>: <%= post.date %>
 		  <% if signed_in? %>
-  		  <%= form_for(post) do |f| %>
-	          <%= f.hidden_field :found, :value => true %>
-		  <%= f.submit "Found it!" %>
-		  <% end %>
-		  <% end %>
+		  <br /><br />
+		  <div class = "confirmation">
+  		    <%= form_for(post) do |f| %>
+	            <%= f.hidden_field :found, :value => true %>
+		    <%= f.submit "Found it!" %>
+		    <% end %>
+		    <% end %>
+		  </div>
 	      </div>
 	      <br />
 	      <% end %>

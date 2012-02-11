@@ -1,5 +1,5 @@
 body{
-    font-family: "Verdana";
+    font-family: "Garamond"
     font-size: 10pt;
     background: #FF0000;
 }
@@ -15,13 +15,24 @@ div.leaderboard{
 
 div.content{
     margin-top: 75px;
-    padding: 15px;
-    background:white;
+    padding: 120px;
+    background:url('/assets/leaderboard.gif') no-repeat;
+    background-size: 100% 100%;
     width: 70%;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
+}
+
+a, a:active, a:visited{
+    text-decoration:none;
+    color: green;
+}
+
+a:hover{
+    color: blue;
+    border-top: 1px solid green;
 }
 
 div.elems{
@@ -38,6 +49,7 @@ div.post{
     padding:5px;
     width: 500px;
     margin-left: 0px;
+    padding-bottom: 30px;
 }
 
 div.post b{
@@ -72,6 +84,10 @@ div.confirmation form{
     margin-bottom: 10px;
 }
 
+div.confirmation{
+    float:right;
+}
+
 div.points p{
     display: inline;
     margin-right: 50px;
@@ -79,4 +95,8 @@ div.points p{
 
 table.postings td{
     vertical-align:top
+}
+
+h1.wanted{
+    font-size: 50pt;
 }
