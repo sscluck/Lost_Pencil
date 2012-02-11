@@ -8,18 +8,17 @@
 
     <!-- For now, locations are hard-coded here-->
     <%= f.label :location %><br />
-    <% locations = [['GHC', 1], ['Doherty', 2], ['Wean', 3], ['Newell
-    Simon', 4], ['UC', 5], ['Tepper',6], ['CFA', 7], ['Porter', 8],
-    ['Baker', 9], ['Hamburg', 10], ['Mellon', 11], ['SEI', 12],
-    ['Resnik', 13], ['West Wing', 14], ['Hamerschlag Hall', 15],
-    ['Margaret Morrison', 16], ['Stever', 17], ['Donner', 18],
-    ['Morewood', 19], ['Mudge', 20]] %>
+    <% locations = [['GHC', 'GHC'], ['Doherty', 'Doherty'], ['Wean', 'Wean'], ['Newell
+    Simon', 'Newell Simon'], ['UC', 'UC'], ['Tepper','Tepper'], ['CFA', 'CFA'], ['Porter', 'Porter'],
+    ['Baker', 'Baker'], ['Hamburg', 'Hamburg'], ['Mellon', 'Mellon'], ['SEI', 'SEI'],
+    ['Resnik', 'Resnik'], ['West Wing', 'West Wing'], ['Hamerschlag Hall', 'Hamerschlag Hall'],
+    ['Margaret Morrison', 'Margaret Morrison'], ['Stever', 'Stever'], ['Donner', 'Donner'],
+    ['Morewood', 'Morewood'], ['Mudge', 'Mudge']] %>
 
     <%= f.select(:location, locations) %><br />
 
     <%= f.label :difficulty %><br />
-    <% levels = [['Piece of cake', 1], ['Not too bad', 2], ['Too
-    elusive', 3]] %>
+    <% levels = [['Piece of cake', 'Piece of cake'], ['Not too bad', 'Not too bad'], ['Elusive', 'Elusive']] %>
     <%= f.select(:difficulty, levels) %><br />
 
     <%= f.submit "Post" %>

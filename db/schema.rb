@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120211163323) do
     t.string   "confirm_password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "points"
+    t.integer  "points"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

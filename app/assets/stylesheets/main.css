@@ -35,6 +35,23 @@ div.nav{
     float: right;
 }
 
+div.nav a{
+    margin-left: 15px;
+}
+
 font.username{
     font-color: blue;
+}
+
+div.curruser{
+    float:left;
+}
+
+div.confirmation form{
+    display: inline;
+}
+
+div.points p{
+    display: inline;
+    margin-right: 50px;
 }

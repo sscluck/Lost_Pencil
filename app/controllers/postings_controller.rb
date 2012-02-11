@@ -43,4 +43,18 @@ class PostingsController < ApplicationController
 
   end
 
+  def destroy
+    @posting = Posting.find(params[:id])
+    @hero = User.find(@posting.found_by)
+    if (@posting.difficulty) == "Piece of cake"
+      @hero.points += 1
+    elsif (@posting.difficulty) == "Not too bad"
+      @hero.points += 2
+    else
+      @hero.points += 3
+         end
+    @posting.destroy
+    redirect_back_or :root
+  end
+
 end

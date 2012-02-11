@@ -1,3 +1,14 @@
+<div class = "points">
+  <% if @user.points >= 10 %>
+      <p>PENCIL GOD</p>
+  <% elsif @user.points >=5 %>
+      <p>Pencil Hero!</p>
+   <% else %>
+       <p>Pencil Scout</p>
+   <% end %>
+   <p>Points earned: <%= @user.points%></p>
+</div>
+
 <% unless @user.postings.where("found = 'true' ").empty? %>
 <h2>Someone found your pencil!</h2>
     <% @user.postings.where("found = 'true' ").each do |post| %>
@@ -11,12 +22,20 @@
 	    <b>Reported missing on</b>: <%= post.date %><br />
 	    <font class = "username"><%= User.find(post.found_by).name
 	    %></font> claims to have found it!
+	    <br /><br />
+	    <div class = "confirmation">
+	      <!--Reject find-->
+	      <%= form_for(post) do |f| %>
+	      <%= f.hidden_field :found, :value => false %>
+	      <%= f.submit "Not mah pencil" %>
+	      <% end %>
 
-	    <!--Reject find-->
-	    <%= form_for(post) do |f| %>
-	        <%= f.hidden_field :found, :value => false %>
-	        <%= f.submit "Not mah pencil" %>
-	    <% end %>
+	      <!--Accept find-->
+	      <%= form_for(post, :html => {:method => 'delete'}) do |f| %>
+	      <%= f.submit "That's mah pencil" %>
+	      <% end %>
+	    </div>
+	    
        </div>
     <% end %>
 <% end %>

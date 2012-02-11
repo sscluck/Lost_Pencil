@@ -1,6 +1,6 @@
 class AddUserPoints < ActiveRecord::Migration
   def self.up
-    add_column :users, :points, :string
+    add_column :users, :points, :integer
   end
 
   def self.down
