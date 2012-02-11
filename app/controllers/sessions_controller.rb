@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:session][:email],
+    user = User.verify(params[:session][:email],
                              params[:session][:password])
     if user.nil?
       flash.now[:error] = "Incorrect username or password."

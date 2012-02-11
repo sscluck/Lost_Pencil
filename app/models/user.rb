@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
     return user if user.password == submit_password
   end
 
+  def self.verify_for_cookie(id, pw)
+    user = find_by_id(id)
+    (user && user.password = pw) ? user : nil
+  end
+
 end
