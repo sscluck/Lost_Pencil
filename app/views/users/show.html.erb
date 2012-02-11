@@ -9,10 +9,18 @@
 	   <b>Last known location</b>: <%= post.location%>
 	   <br/ > <br />
 	    <b>Reported missing on</b>: <%= post.date %><br />
-	    <font class = "username"><%= User.find(post.found_by).name %></font> claims to have found it!
+	    <font class = "username"><%= User.find(post.found_by).name
+	    %></font> claims to have found it!
+
+	    <!--Reject find-->
+	    <%= form_for(post) do |f| %>
+	        <%= f.hidden_field :found, :value => false %>
+	        <%= f.submit "Not mah pencil" %>
+	    <% end %>
        </div>
     <% end %>
 <% end %>
+<br />
 <h2>My Postings</h2>
 <% unless @user.postings.where("found = 'false'").empty? %>
     <% @user.postings.where("found = 'false'").each do |post| %>

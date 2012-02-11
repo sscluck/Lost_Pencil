@@ -19,14 +19,28 @@ class PostingsController < ApplicationController
 
   def update
     @posting = Posting.find(params[:id])
-    @posting.found_by = current_user
-    if @posting.update_attributes(params[:posting])
-      flash[:success] = "Found notification sent."
-      redirect_to :root
+
+    if params[:found] == "true"
+      @posting.found_by = current_user
+      if @posting.update_attributes(params[:posting])
+        flash[:success] = "Found notification sent."
+        redirect_to :root
+      else
+        flash[:error] = "Something went wrong."
+        redirect_to :root
+      end
+
     else
-      flash[:error] = "Something went wrong."
-      redirect_to :root
+      @posting.found_by = nil
+      if @posting.update_attributes(params[:posting])
+        flash[:success] = "Posting resubmitted."
+        redirect_to :root
+      else
+        flash[:error] = "Something went wrong."
+        redirect_to :root
+      end
     end
+
   end
 
 end
