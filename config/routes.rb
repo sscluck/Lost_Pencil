@@ -5,8 +5,8 @@ LostPencil::Application.routes.draw do
 
   get "sessions/new"
 
-  get "users/new"
   get "postings/new"
+  get "postings/all"
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'

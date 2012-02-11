@@ -1,0 +1,12 @@
+<div class = "nav center">
+     <%= link_to "Postings", root_path %>
+    <% if signed_in? %> 
+        <%= link_to "Mah page", user_path(current_user) %>
+        <%= link_to "Add post", postings_new_path %>
+       <%= link_to "Sign out", signout_path, :method => :delete %>
+    <% else %>
+       <%= link_to "Sign in", signin_path %> or <%= link_to "Sign
+       up!", signup_path %>
+    <% end %>
+</div>
+<br />

@@ -1,0 +1,36 @@
+<% unless @user.postings.where("found = 'true' ").empty? %>
+<h2>Someone found your pencil!</h2>
+    <% @user.postings.where("found = 'true' ").each do |post| %>
+         <div class = "post center">
+	   <h2><%= post.title %></h2>
+	   <br />
+	   <%= post.description %>
+	   <br /><br />
+	   <b>Last known location</b>: <%= post.location%>
+	   <br/ > <br />
+	    <b>Reported missing on</b>: <%= post.date %>
+	    <%= User.find(post.found_by) %> claims to have found it!
+       </div>
+    <% end %>
+<% end %>
+<h2>My Postings</h2>
+<% unless @user.postings.where("found = 'false'").empty? %>
+    <% @user.postings.where("found = 'false'").each do |post| %>
+	    <div class = "post center">
+	   <h2><%= post.title %></h2>
+	   <br />
+	   <%= post.description %>
+	   <br /><br />
+	   <b>Last known location</b>: <%= post.location%>
+	   <br/ > <br />
+	    <b>Reported missing on</b>: <%= post.date %>
+	    <% if signed_in? %>
+  	        <%= form_for(post) do |f| %>
+	            <%= f.hidden_field :found, :value => true %>
+	            <%= f.submit "Found it!" %>
+		<% end %>
+	    <% end %>
+       </div>
+       <br />
+    <% end %>
+<% end %>
