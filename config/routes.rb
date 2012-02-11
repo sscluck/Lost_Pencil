@@ -3,6 +3,6 @@ LostPencil::Application.routes.draw do
 
   get "postings/new"
 
-  root :to => 'postings#show'
+  root :to => 'postings#all'
 
 end

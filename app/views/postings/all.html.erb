@@ -1,0 +1,15 @@
+<h1 class = "center">Lost Pencils</h1>
+<br />
+<p>
+   <% Posting.all.each do |post| %>
+       <div class = "post center">
+	   <h2><%= post.title %></h2>
+	   <br />
+	   <%= post.description %>
+	   <br /><br />
+	   <b>Last known location</b>: <%= post.location%>
+	   <br/ > <br />
+	    <b>Reported missing on</b>: <%= post.date %>
+       </div>
+   <% end %>
+</p

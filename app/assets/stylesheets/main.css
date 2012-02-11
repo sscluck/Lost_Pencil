@@ -14,3 +14,12 @@ div.content{
     width: 750px;
     padding: 10px;
 }
+
+div.post{
+    background: #DFFCFF;
+    padding:5px;
+}
+
+div.post b{
+    color: #FFCC00;
+}
