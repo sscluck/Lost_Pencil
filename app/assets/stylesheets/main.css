@@ -9,27 +9,28 @@ body{
     margin-right: auto;
 }
 
+div.leaderboard{
+    width: 350px;
+}
+
 div.content{
     margin-top: 75px;
     padding: 15px;
-    background: white;
+    background:white;
     width: 70%;
     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+
+div.elems{
+    display:inline;
 }
 
 div.all_posts{
     width: 750px;
-    margin-left:350px;
     padding: 10px;
-}
-
-div.all_posts .elems{
-    display: inline;
-}
-
-div.leaderboard{
-    margin-right:0px;
-    margin-left: -350px;
 }
 
 div.post{
@@ -74,4 +75,8 @@ div.confirmation form{
 div.points p{
     display: inline;
     margin-right: 50px;
+}
+
+table.postings td{
+    vertical-align:top
 }
