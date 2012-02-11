@@ -7,10 +7,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      sign_in @user
+      flash[:success] = "You signed up!"
       redirect_to :root
+
     else
       render 'new'
     end
+
   end
 
 end

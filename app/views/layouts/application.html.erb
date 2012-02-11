@@ -9,9 +9,21 @@
 </head>
 <body>
   <div class = "content center">
+    <% flash.each do |k, v|%>
+       <div class = "flash">
+	 <%= value %>
+       </div>
+    <% end %>
+
+    <% if signed_in? %> 
+       <%= link_to "Sign out", signout_path, :method => :delete %>
+    <% else %>
+       <%= link_to "Sign in", signin_path %> or <%= link_to "Sign
+       up!", signup_path %>
+    <% end %>
     <%= yield %>
 
-    <%= debug(params) if Rails.env.development? >
+    <%= debug(params) if Rails.env.development? %>
   </div>
 </body>
 </html>
